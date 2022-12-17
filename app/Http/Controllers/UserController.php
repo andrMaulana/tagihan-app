@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         return view('operator.user_index', [
-            Model::where('akses', '!=', 'wali')
+            'models' => Model::where('akses', '!=', 'wali')
             ->latest()
             ->paginate(50)
         ]);
